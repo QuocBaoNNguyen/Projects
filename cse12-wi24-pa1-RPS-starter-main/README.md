@@ -1,40 +1,4 @@
-# CSE 12 PA1: RPS (Rock-Paper-Scissors)
-
-**Due Date: Thursday, January 18, 2024, 11:59 pm PST**
-
-### Assignment goals:
-* Affirm your commitment to upholding academic integrity in this course
-* Get set up to program in Java
-* Write and run a Java program that uses inheritance
-* Run tests on your Java program using JUnit
-
-## Part 1: Academic Integrity Pledge (5 points)
-
-Carefully read the integrity policy for this course which you can find in the Syllabus on canvas. Then, complete this [Integrity Pledge](https://docs.google.com/forms/d/e/1FAIpQLSepa91iNaefbsnq3D2mFgng7BM0KK9z-oaHZKoN61I4j9EDag/viewform).  
-
-**Note:** this is the same pledge mentioned in the Syllabus on page 8. If you have already completed this then you do not have to do it again.
-
-
-## Part 2: Downloading and Running the Starter Code
-
-In this class, you may use any programming environment that you would like, but you must be able to write, compile and run Java programs and JUnit tests.  You have the choice of setting up your own machine, or using your CSE 12 account in the lab or on Cloud Labs. By now, we assume that you are comfortable writing and running Java Programs.  Make sure your environment is set up to compile and run both Java programs and JUnit tests. If you need help getting set up, please see the setup resources on Canvas. As always, if you get stuck please come see a tutor.  
-
-1. Download the starter code in this repository by clicking on "<> Code" -> "Download ZIP". Then put it in a directory in your working environment. 
-
-   Alternatively, you can create a **private** repository by clicking on "Use this template", if you'd prefer to use Git to track your changes. Do NOT fork or create any **public** repositories as this enables everyone to view your code.
-
-   You will have four files in the `starter` directory:
-    - `RPSInterface.java` - The interface for the Rock-Paper-Scissors game
-    - `RPSAbstract.java` - An abstract class that implements some of the methods in RPSInterface
-    - `RPS.java` - A concrete class that implements the rest of the RPSInterface
-    - `RPSTester.java` - A tester containing JUnit tests for the Rock-Paper-Scissors game
-    
-    In the `lib` directory, we have also included the `.jar` files needed to run JUnit tests. 
-
-2. Compile and run `RPS.java` (`RPSInterface.java` and `RPSAbstract.java` should also compile).  The code should compile and run, but it should only print a message saying that the game is not implemented yet.
-    * You can specify a unique set of moves using command line arguments. If no command line arguments are provided, the game will use the default set of moves. See examples under "**Example Output for Part 3**".
-
-3. Compile and run `RPSTester.java`.  If you are doing this from the command line and aren’t sure what to type, see below. Make sure you are running these commands from the `starter` directory. You should see most of the tests fail (though a few will pass with the default starter code functionality).
+# RPS (Rock-Paper-Scissors)
 
       Running the tester on UNIX based systems (including a mac):
 
@@ -47,20 +11,7 @@ In this class, you may use any programming environment that you would like, but 
       * Execute: `java -cp ".;..\libs\junit-4.13.2.jar;..\libs\hamcrest-2.2.jar" org.junit.runner.JUnitCore RPSTester`
 
 
-## Part 3: Rock-Paper-Scissors with Inheritance (95 points)
-
-### Inheritance hierarchy
-
-In this part of the assignment, you will create a computer game that allows the user to play the game of Rock-Paper-Scissors against the computer. We have split the implementation into an interface, an abstract class, and a concrete class so you can get comfortable again with inheritance.  
-
-The inheritance hierarchy is shown below.  Please read through the code and make sure you understand how `RPSInterface`, `RPSAbstract`, and `RPS` work together.  Do not change the interface or the inheritance hierarchy.
-
-
-![](https://i.imgur.com/JM9Yjsa.png)
-
 ### Game Play
-
-Your job is to implement the missing methods to complete the implementation of the Rock-Paper-Scissors game.  If you are unfamiliar with this game, you can read about it on Wikipedia[ here](http://en.wikipedia.org/wiki/Rock-paper-scissors) (though we will be implementing a slightly generalized version of the game).
 
 When the user starts your game, it should play the game of Rock-Paper-Scissors with the user until the user types `q`. Here is an example run. User input appears after the `(Type the move or q to quit)` prompt.
 
