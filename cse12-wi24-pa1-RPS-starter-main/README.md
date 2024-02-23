@@ -1,19 +1,6 @@
-# RPS (Rock-Paper-Scissors)
-
-      Running the tester on UNIX based systems (including a mac):
-
-      * Compile: `javac -cp ../libs/junit-4.13.2.jar:../libs/hamcrest-2.2.jar:. RPSTester.java`
-      * Execute: `java -cp ../libs/junit-4.13.2.jar:../libs/hamcrest-2.2.jar:. org.junit.runner.JUnitCore RPSTester`
-
-      Running the tester on Windows systems:
-
-      * Compile: `javac -cp ".;..\libs\junit-4.13.2.jar;..\libs\hamcrest-2.2.jar" RPSTester.java`
-      * Execute: `java -cp ".;..\libs\junit-4.13.2.jar;..\libs\hamcrest-2.2.jar" org.junit.runner.JUnitCore RPSTester`
-
-
 ### Game Play
 
-When the user starts your game, it should play the game of Rock-Paper-Scissors with the user until the user types `q`. Here is an example run. User input appears after the `(Type the move or q to quit)` prompt.
+When the user starts the game, it should play the game of Rock-Paper-Scissors with the user until the user types `q`. Here is an example run. User input appears after the `(Type the move or q to quit)` prompt.
 
 ```
 $ javac RPS.java
