@@ -14,7 +14,6 @@ class Flight {
     int seatsPerRow;
     Ticket ticketsBooked[][];
 
-    // TODO: Create 2D array seatmap
 
     public Flight(String flightNo, String departureAirport,
             String arrivalAirport, String aircraftType,
@@ -30,10 +29,7 @@ class Flight {
         this.numRows = numRows;
         this.seatsPerRow = seatsPerRow;
         this.capacity = numRows * seatsPerRow;
-        // TODO: Calculate capacity
-        
         this.ticketsBooked = new Ticket [this.numRows][this.seatsPerRow];
-        // TODO: Initialize 2D array seat map.
 
     }
 
@@ -53,7 +49,7 @@ class Flight {
             }
         
 
-        return false; // TODO
+        return false; 
     }
 
     int getNumBooked() {
@@ -66,7 +62,7 @@ class Flight {
                 }
             }
         }
-        return totalTickets; // TODO
+        return totalTickets; 
     }
 
     boolean isFull() {
@@ -77,7 +73,7 @@ class Flight {
                 }
             }
         }
-        return true; // TODO
+        return true; 
     }
 
     /**
