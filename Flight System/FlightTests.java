@@ -20,7 +20,7 @@ class FlightTests {
                 LocalDateTime.now().plusHours(13),
                 30, 10);
 
-        return t.checkExpect(f.costInSkyPoints(), 100000.0);//gud
+        return t.checkExpect(f.costInSkyPoints(), 100000.0);
     }
 
     boolean testIsOccupied(Tester t) {
@@ -39,8 +39,8 @@ class FlightTests {
         // because our system is zero-indexed, seat "4D" would be (3, 'D').
         f.ticketsBooked[3][3] = new Ticket(p, f, false, 3, 'D');
 
-        return t.checkExpect(f.isOccupied(3, 'D'), true)//gud
-                && t.checkExpect(f.isOccupied(4, 'A'), false);//gud
+        return t.checkExpect(f.isOccupied(3, 'D'), true)
+                && t.checkExpect(f.isOccupied(4, 'A'), false);
     }
 
     /**
@@ -63,11 +63,11 @@ class FlightTests {
             }
         }
 
-        return t.checkExpect(f.isOccupied(100, 'A'), true)//gud
-                && t.checkExpect(f.isOccupied(3, 'Z'), true)//gud
-                && t.checkExpect(f.isOccupied(-2, 'a'), true)//gud
-                && t.checkExpect(f.isOccupied(30, 'A'), true) // valid = 0-29 gud
-                && t.checkExpect(f.isOccupied(20, 'K'), true); // valid = 'A'-'J' gud
+        return t.checkExpect(f.isOccupied(100, 'A'), true)
+                && t.checkExpect(f.isOccupied(3, 'Z'), true)
+                && t.checkExpect(f.isOccupied(-2, 'a'), true)
+                && t.checkExpect(f.isOccupied(30, 'A'), true) 
+                && t.checkExpect(f.isOccupied(20, 'K'), true); 
     }
 
     /**
@@ -120,9 +120,9 @@ class FlightTests {
         }
         
         f.ticketsBooked[3][3] = new Ticket(p, f, false, 3, 'D');
-        return t.checkExpect(f.getNumBooked(), 1) && //gud
-               t.checkExpect(g.getNumBooked(), 0) && //gud
-               t.checkExpect(h.getNumBooked(), 300); //gud
+        return t.checkExpect(f.getNumBooked(), 1) && 
+               t.checkExpect(g.getNumBooked(), 0) && 
+               t.checkExpect(h.getNumBooked(), 300); 
     }
 
     /**
@@ -158,9 +158,9 @@ class FlightTests {
                 g.ticketsBooked[i][r] = new Ticket(p, g, false, i, (char)('A' + r));
             }
         }
-        g.ticketsBooked[3][3] = null;//makes flight g NOT FULL
-        return t.checkExpect(f.isFull(), true)&& //gud
-               t.checkExpect(g.isFull(), false); //gud
+        g.ticketsBooked[3][3] = null;
+        return t.checkExpect(f.isFull(), true)&& 
+               t.checkExpect(g.isFull(), false); 
     }
 
     /**
@@ -180,7 +180,7 @@ class FlightTests {
         f.ticketsBooked[3][3] = new Ticket(p, f, false, 3, 'D');
 
         
-        return t.checkExpect(f.getFlightPlanInfo(), "CA 987: ZBAA/KLAX B77W 1/300"); //gud
+        return t.checkExpect(f.getFlightPlanInfo(), "CA 987: ZBAA/KLAX B77W 1/300"); 
     }
 
     /**************************************************************************
@@ -205,9 +205,9 @@ class FlightTests {
                 30, 10);
         Passenger p = new Passenger(1000, "Frodo", "Baggins", 1000, 10000.0);
         f.ticketsBooked[3][3] = new Ticket(p, f, false, 3, 'D');
-        return t.checkExpect(p.book(f, 3, 'D'), null)&& //gud
-               t.checkExpect(p.book(f, 100, 'D'), null)&& //gud
-               t.checkExpect(p.book(f, 3, 'Z'), null); //gud
+        return t.checkExpect(p.book(f, 3, 'D'), null)&& 
+               t.checkExpect(p.book(f, 100, 'D'), null)&& 
+               t.checkExpect(p.book(f, 3, 'Z'), null); 
     }
 
     /**
@@ -237,12 +237,12 @@ class FlightTests {
 
         Ticket t1 = p1.book(f, 3, 'D');
         p2.book(f, 4, 'D');
-        return t.checkExpect(p1.cashBalance, 9000.0) && //gud
-               t.checkExpect(p2.skyPoints, 0) && //gud
-               t.checkExpect(f.ticketsBooked[3]['D' - 'A'], t1) && //gud
-               t.checkExpect(p3.book(f, 5, 'D'), null) && //tests broke passenger
-               t.checkExpect(p2.book(f, 1000, 'Z'), null)&& // tests out of bounds
-               t.checkExpect(p4.book(f, 3, 'D'), null); //tests booking alr booked seat
+        return t.checkExpect(p1.cashBalance, 9000.0) && 
+               t.checkExpect(p2.skyPoints, 0) && 
+               t.checkExpect(f.ticketsBooked[3]['D' - 'A'], t1) && 
+               t.checkExpect(p3.book(f, 5, 'D'), null) && 
+               t.checkExpect(p2.book(f, 1000, 'Z'), null)&& 
+               t.checkExpect(p4.book(f, 3, 'D'), null); 
     }
 
     /**************************************************************************
@@ -277,8 +277,8 @@ class FlightTests {
         f.ticketsBooked[4][3] = new Ticket(p, f, false, 4, 'D');
         t2.cancelled = true;
 
-        return t.checkExpect(t1.getTicketInfo(), "CA 987 (ZBAA/KLAX) @4D Baggins, Frodo")&& //gud
-               t.checkExpect(t2.getTicketInfo(), "CA 987 (ZBAA/KLAX) @5D Baggins, Frodo [CANCELLED]"); // gud
+        return t.checkExpect(t1.getTicketInfo(), "CA 987 (ZBAA/KLAX) @4D Baggins, Frodo")&& 
+               t.checkExpect(t2.getTicketInfo(), "CA 987 (ZBAA/KLAX) @5D Baggins, Frodo [CANCELLED]"); 
     }
     /**
      * Ticket.cancel()
