@@ -10,7 +10,6 @@ class Ticket {
     int row;
     char seat;
 
-    // TODO: Add row/seat fields
 
     Ticket(Passenger passenger, Flight flight, boolean purchasedWithSkyPoints, int row, char seat) {
         this.passenger = passenger;
@@ -23,7 +22,6 @@ class Ticket {
         this.row = row;
         this.seat = seat;
 
-        // TODO: Initialize row/seat fields.
     }
 
     boolean cancel() {
@@ -41,7 +39,6 @@ class Ticket {
             this.passenger.cashBalance += this.flight.cost * 0.95;
         }
 
-        // TODO: Remove ticket from seatmap.
         flight.ticketsBooked[row][seat - 'A'] = null;
 
         this.cancelled = true;
@@ -56,6 +53,6 @@ class Ticket {
     String getTicketInfo() {
         return flight.flightNo + " " + "(" + flight.departureAirport +
         "/" + flight.arrivalAirport + ") @" + (this.row + 1) + this.seat + " " +
-        passenger.lastName + ", " + passenger.firstName + (cancelled ? " " + "[CANCELLED]" : ""); // TODO
+        passenger.lastName + ", " + passenger.firstName + (cancelled ? " " + "[CANCELLED]" : ""); 
     }
 }
